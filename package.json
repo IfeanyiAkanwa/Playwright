@@ -1,0 +1,27 @@
+{
+  "name": "Playwright_Automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "client_app_debug": "npx playwright test tests/clientApp.spec.js --debug-on-fail",
+    "client_app": "npx playwright test tests/clientApp.spec.js",
+    "test": "npx playwright test tests/WebAPITest.spec.js --headed",
+    "regression": "npx playwright test",
+    "webTests" :"npx playwright test --grep @Web",
+    "chrome" :"npx playwright test --config playwright.config1 --project=chrome"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.42.1",
+    "@types/node": "^20.11.20",
+    "allure-playwright": "^2.15.0"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "node": "^18.17.0",
+    "playwright": "^1.41.2"
+  }
+}

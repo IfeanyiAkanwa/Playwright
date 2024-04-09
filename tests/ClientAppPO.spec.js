@@ -53,33 +53,22 @@ test("Visible/Invisible Elements & Popup Validation Test", async ({page})=>{
 })
     
 
+test('Screenshot testing', async({page})=>{
+    await page.goto("https://rahulshettyacademy.com/AutomationPractice/")
+    await expect(page.locator("#displayed-text")).toBeVisible();
+    await page.locator("#displayed-text").screenshot({path: 'boxElementScreenshot.png'})
+    await page.locator("#hide-textbox").click();
+    await expect(page.locator("#displayed-text")).toBeHidden();
+    await page.screenshot({path: 'screenshot.png'});
 
-// test('Lets shop registration portal', async({page})=>{
-//     const firstName = page.locator("#firstName")
-//     const lastName = page.locator("#lastName")
-//     const email = page.locator("#userEmail")
-//     const PhoneNo = page.locator("#userMobile")
-//     const password = page.locator("#userPassword")
-//     const confirmPassword = page.locator("#confirmPassword")
-//     await page.goto("https://rahulshettyacademy.com/client/")
-//     await page.locator(".btn1").click();
-//     await firstName.fill("Davido")
-//     await lastName.fill("Ifeanyio")
-//     await email.fill("davidakanwa006@gmail.com")
-//     await PhoneNo.fill("7788776646")
 
-//     await page.locator("select.custom-select").selectOption("2: Student");
-//     //OR const dropdown = await page.locator("select.custom-select");
-//     // await dropdown.selectOption("2: Student");
-    
-//     await page.locator("label input.ng-pristine").nth(0).click();
-//     await page.waitForTimeout(1000);
-//     await password.fill("Wizkid001$")
-//     await confirmPassword.fill("Wizkid001$")
-//     await page.locator("input[type='checkbox']").click();
-//     await page.locator("#login").click();
-//     await page.waitForTimeout(1000)
-//     await expect(page.locator("//h1[normalize-space()='Account Created Successfully'")).toContainText("Account Created Successfully");
-//     await page.locator(".btn.btn-primary").click(); 
+});
+//Visual testing - 
+//This can be used for test where codes cant test like element alignment, colors etc
+test('Visual testing', async({page})=>{
+  await page.goto("https://google.com")
+  await expect(await page.screenshot()).toMatchSnapshot('googlelanding.png')
+ 
 
-// });
+
+});

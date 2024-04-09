@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "client_app_debug": "npx playwright test tests/clientApp.spec.js --debug-on-fail",
-    "client_app": "npx playwright test tests/clientApp.spec.js",
+    "client_app": "npx playwright test tests/ClientApp.spec.js",
+    "clientAppPO": "npx playwright test tests/ClientAppPO.spec.js",
     "test": "npx playwright test tests/WebAPITest.spec.js --headed",
     "regression": "npx playwright test",
-    "webTests" :"npx playwright test --grep @Web",
+    "smoke" :"npx playwright test --grep @Web",
     "chrome" :"npx playwright test --config playwright.config1 --project=chrome"
   },
   "keywords": [],
